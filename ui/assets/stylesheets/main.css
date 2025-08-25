@@ -1,0 +1,67 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*@media (prefers-color-scheme: light) {
+    body {
+        background-color: rgb(39, 42, 48);
+        color: rgb(0, 0, 0);
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background: hsla(182, 58%, 82%, 1);
+
+        background: linear-gradient(138deg, hsla(182, 58%, 82%, 1) 0%, hsla(321, 36%, 85%, 1) 61%, hsla(54, 30%, 86%, 1) 100%);
+
+        background: -moz-linear-gradient(138deg, hsla(182, 58%, 82%, 1) 0%, hsla(321, 36%, 85%, 1) 61%, hsla(54, 30%, 86%, 1) 100%);
+
+        background: -webkit-linear-gradient(138deg, hsla(182, 58%, 82%, 1) 0%, hsla(321, 36%, 85%, 1) 61%, hsla(54, 30%, 86%, 1) 100%);
+
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B7EAEC", endColorstr="#E6CADC", GradientType=1 );
+    }
+}*/
+
+/* @media (prefers-color-scheme: dark) { */
+    body {
+        background-color: rgb(39, 42, 48);
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        height: 100vh;
+        background: 
+            radial-gradient(circle at 20% 80%, #1e3a8a 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, #3730a3 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, #1e40af 0%, transparent 50%),
+            radial-gradient(circle at 60% 90%, #7c2d12 0%, transparent 50%),
+            radial-gradient(circle at 90% 70%, #86198f 0%, transparent 50%),
+            linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #581c87 100%);
+        background-size: 
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+/*}*/
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.largetitle {
+    font-size: 50px;
+}
+
+.text-center {
+    text-align: center;
+}

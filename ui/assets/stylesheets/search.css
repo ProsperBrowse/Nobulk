@@ -1,0 +1,13 @@
+.searchboxdiv {
+  display: flex;
+  flex-direction: column;   /* Stack children vertically */
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+  height: 100vh;            /* Full viewport height for true vertical centering */
+  gap: 10px;                /* Space between h1 and input */
+}
+
+.searchboxdiv input {
+    border-radius: 10px;
+    /* padding-left: 10px; */
+}

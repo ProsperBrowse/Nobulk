@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/stylesheets/main.css">
+    <link rel="stylesheet" href="assets/stylesheets/search.css">
+    <link rel="stylesheet" href="assets/stylesheets/iframe.css">
+    <title>Prosperity Search</title>
+    <style>
+        /* Basic popup styling */
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 250px;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .popup::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #222 transparent;
+        }
+
+        /* Merged search container */
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Search engine dropdown styling */
+        #searchEngine {
+            height: 31px;
+            border-radius: 20px 0 0 20px;
+            border: 2px solid #ccc;
+            border-right: none;
+            padding: 0 15px;
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+            outline: none;
+            width: 35%;
+        }
+
+        /* Search input styling */
+        #url {
+            height: 31px;
+            border-radius: 0 20px 20px 0;
+            border: 2px solid #ccc;
+            border-left: none;
+            padding: 0 20px;
+            text-align: center;
+            outline: none;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Focus states for better UX */
+        #searchEngine:focus, #url:focus {
+            border-color: #007bff;
+        }
+
+        #searchEngine:focus + #url {
+            border-color: #007bff;
+        }
+    </style>
+  </head>
+  <body>
+<div class="searchboxdiv" style="text-align: center;">
+    <h1 class="largetitle">Prosper Nobulk</h1>
+    <h2>Be productive browsing without any bulk..</h2>
+
+    <!-- Merged search container -->
+    <div class="search-container">
+        <select id="searchEngine">
+            <option value="duck">DuckDuckGo</option>
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="ecosia">Ecosia</option>
+            <option value="prosper" selected>Prosper Secure</option>
+        </select>
+        
+        <input 
+            type="text" 
+            placeholder="Search or enter a URL..." 
+            id="url" 
+            name="url"
+            onkeydown="if(event.key === 'Enter'){ redirect(); }"
+        >
+    </div>
+</div>
+<p>Prosper Nobulk is a browser with NO BULK! Meaning it has nothing that could slow down your computer or the browser unlike chromium based browsers (this one isn't).</p>
+
+<script>
+function redirect() {
+    const input = document.getElementById("url").value.trim();
+    if (!input) return;
+
+    // Check if input is a URL
+    const isUrl = input.startsWith("http://") || input.startsWith("https://");
+
+    let destination;
+    if (isUrl) {
+        destination = input;
+    } else {
+        // Determine which search engine to use
+        const engine = document.getElementById("searchEngine").value;
+        const query = encodeURIComponent(input);
+
+        switch(engine) {
+            case "google":
+                destination = `https://www.google.com/search?q=${query}`;
+                break;
+            case "bing":
+                destination = `https://www.bing.com/search?q=${query}`;
+                break;
+            case "ecosia":
+                destination = `https://www.ecosia.org/search?q=${query}`;
+                break;
+            case "duck":
+                destination = `https://duckduckgo.com/?q=${query}`;
+                break;
+            case "prosper":
+            default:
+                destination = `http://search.api.unwallproxy.duckdns.org/search?q=${query}`;
+        }
+    }
+
+    window.location.href = destination;
+}
+</script>
+
+    
+  </body>
+</html>

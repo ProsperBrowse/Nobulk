@@ -1,0 +1,16 @@
+{
+  "name": "nobulk",
+  "version": "1.0.0",
+  "description": "A simple version of Prosperity with No bulk.",
+  "main": "index.js",
+  "scripts": {
+    "tauri": "tauri"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.2"
+  }
+}
